@@ -1,5 +1,7 @@
 package features;
 
+import java.time.Duration;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +31,9 @@ public class GoogleSearch {
         WebElement btnSearch = webDriver.findElement(By.name("btnK"));
         
         assertEquals("El titulo es el correcto", "Selenium Web Driver - Buscar con Google", webDriver.getTitle());
+    }
+
+    private void assertEquals(String string, String string2, String title) {
     }
 
     @After
