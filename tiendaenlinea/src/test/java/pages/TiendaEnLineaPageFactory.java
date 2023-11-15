@@ -70,49 +70,49 @@ public class TiendaEnLineaPageFactory {
 
     public void ingresarTiendaEnLinea(String txtUser, String txtPass) {
         llenarLogin(txtUser, txtPass);
-        webDriver.findElement(btnLogin).click();
+        btnLogin.click();
     }
 
     //SELECCIONAR PRODUCTOS E IR AL CARRITO DE COMPRAS
     public void seleccionarProductos(){
-        webDriver.findElement(prod1).click();
-        webDriver.findElement(prod2).click();
-        webDriver.findElement(prod3).click();
-        webDriver.findElement(prod4).click();
-        webDriver.findElement(prod5).click();
-        webDriver.findElement(carrito).click();
+        prod1.click();
+        prod2.click();
+        prod3.click();
+        prod4.click();
+        prod5.click();
+        carrito.click();
     }
 
     //GENERAR EL CHECKOUT
     public void checkOut(){
-        webDriver.findElement(btcCheck).click();
+        btcCheck.click();
     }
 
     //LLENAR EL FORMULARIO DE DATOS ADICIONALES
     private void llenarAdicional(String nombre, String apellido, String postal) {
-        webDriver.findElement(firstName).clear();
-        webDriver.findElement(firstName).sendKeys(nombre);
-        webDriver.findElement(lastName).clear();
-        webDriver.findElement(lastName).sendKeys(apellido);
-        webDriver.findElement(postalCode).clear();
-        webDriver.findElement(postalCode).sendKeys(postal);
+        firstName.clear();
+        firstName.sendKeys(nombre);
+        lastName.clear();
+        lastName.sendKeys(apellido);
+        postalCode.clear();
+        postalCode.sendKeys(postal);
     }
 
     public void enviarDatosAdicional(String txtNombre, String txtApellido, String txtPostal) {
         llenarAdicional(txtNombre, txtApellido, txtPostal);
-        webDriver.findElement(btnContinuar).click();
+        btnContinuar.click();
     }
 
     //FINALIZAR COMPRA
     public void finCompra() {
-        webDriver.findElement(btnFinish).click();
+        btnFinish.click();
     }
 
     //BACKHOME Y SALIR DE LA TIENDA
     public void salirTiendaEnLinea() {
-        webDriver.findElement(btnBackHome).click();
-        webDriver.findElement(btnMenuP).click();
-        webDriver.findElement(optLogOut).click();
+        btnBackHome.click();
+        btnMenuP.click();
+        optLogOut.click();
     }
 
     //PUNTOS DE CONTROL
