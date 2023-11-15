@@ -6,19 +6,24 @@ import org.openqa.selenium.WebDriver;
 public class TiendaEnLineaPage {
     
     WebDriver webDriver;
+    private By userName = By.name("user-name");
+    private By passWord = By.name("password");
 
-    private By userName = By.id("username");
-    private By passWord = By.id("password");
-
-    public TiendaEnLinea(WebDriver webDriver) {
+    public TiendaEnLineaPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    private void llenarAuntenticacion(String usuario, String contra) {
-        userName.clear();
-        userName.sendKeys(usuario);
-        passWord.clear();
-        passWord.sendKeys(contra);
+    public void llenarUser(String usuario) {
+        webDriver.findElement(userName).clear();
+        webDriver.findElement(userName).sendKeys(usuario);
     }
+
+    public void llenarPass(String contra) {
+        webDriver.findElement(passWord).clear();
+        webDriver.findElement(passWord).sendKeys(contra);
+    }
+
+
+
 
 }

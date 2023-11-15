@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pages.TiendaEnLineaPage;
+
 public class TiendaEnLinea {
 
     WebDriver webDriver;
@@ -22,14 +24,10 @@ public class TiendaEnLinea {
 
     @Test
     public void Autenticacion() {
-        TiendaEnLinea tiendaEnLinea = new TiendaEnLinea();
-        tiendaEnLinea.Autenticacion();
-        // tiendaEnLinea.searchGoogle("Selenium Web Driver");
-        // tiendaEnLinea.isUserInSearchResult("Selenium Web Driver - Buscar con Google");
+        TiendaEnLineaPage tiendaEnLineaPage = new TiendaEnLineaPage(webDriver);
+        tiendaEnLineaPage.llenarUser("standard_user");
+        tiendaEnLineaPage.llenarPass("secret_sauce");
     }
-
-
-
 
     @After
     public void tearDown() {
