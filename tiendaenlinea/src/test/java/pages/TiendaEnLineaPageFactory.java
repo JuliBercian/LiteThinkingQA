@@ -4,45 +4,68 @@ import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class TiendaEnLineaPage {
+public class TiendaEnLineaPageFactory {
+    
     WebDriver webDriver;
     //INGRESAR A LA TIENDA EN LINEA
-    private By userName = By.name("user-name");
-    private By passWord = By.name("password");
-    private By btnLogin = By.name("login-button");
+    @FindBy(name = "user-name")
+    WebElement userName;
+    @FindBy(name = "password")
+    WebElement passWord;
+    @FindBy(name = "login-button")
+    WebElement btnLogin;
     //SELECCIONAR PRODUCTOS
-    private By prod1 = By.id("add-to-cart-sauce-labs-backpack");
-    private By prod2 = By.id("add-to-cart-sauce-labs-bike-light");
-    private By prod3 = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
-    private By prod4 = By.id("add-to-cart-sauce-labs-fleece-jacket");
-    private By prod5 = By.id("add-to-cart-sauce-labs-onesie");
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    WebElement prod1;
+    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
+    WebElement prod2;
+    @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
+    WebElement prod3;
+    @FindBy(id = "add-to-cart-sauce-labs-fleece-jacket")
+    WebElement prod4;
+    @FindBy(id = "add-to-cart-sauce-labs-onesie")
+    WebElement prod5;
     //VER PRODUCTOS EN CARRITO
-    private By carrito = By.id("shopping_cart_container");
+    @FindBy(id = "shopping_cart_container")
+    WebElement carrito;
     //IR AL CKECKOUT
-    private By btcCheck = By.id("checkout");
+    @FindBy(id = "checkout")
+    WebElement btcCheck;
     //LLENAR DATOS ADICIONALES
-    private By firstName = By.id("first-name");
-    private By lastName = By.id("last-name");
-    private By postalCode = By.id("postal-code");
-    private By btnContinuar = By.name("continue");
+    @FindBy(id = "first-name")
+    WebElement firstName;
+    @FindBy(id = "last-name")
+    WebElement lastName;
+    @FindBy(id = "postal-code")
+    WebElement postalCode;
+    @FindBy(id = "continue")
+    WebElement btnContinuar;
     //FINALIZAR Y SALIR DE LA TIENDA
-    private By btnFinish = By.name("finish");
-    private By btnBackHome = By.name("back-to-products");
-    private By btnMenuP = By.id("react-burger-menu-btn");
-    private By optLogOut = By.id("logout_sidebar_link");
+    @FindBy(name = "finish")
+    WebElement btnFinish;
+    @FindBy(name = "back-to-products")
+    WebElement btnBackHome;
+    @FindBy(id = "react-burger-menu-btn")
+    WebElement btnMenuP;
+    @FindBy(id = "logout_sidebar_linke")
+    WebElement optLogOut;
 
     //ABRIR TIENDA EN EL NAVEGADOR
-    public TiendaEnLineaPage(WebDriver webDriver) {
+    public TiendaEnLineaPageFactory(WebDriver webDriver) {
         this.webDriver = webDriver;
+        PageFactory.initElements(webDriver, this);
     }
 
     //INGRESAR A LA TIENDA
     private void llenarLogin(String usuario, String contra) {
-        webDriver.findElement(userName).clear();
-        webDriver.findElement(userName).sendKeys(usuario);
-        webDriver.findElement(passWord).clear();
-        webDriver.findElement(passWord).sendKeys(contra);
+       userName.clear();
+       userName.sendKeys(usuario);
+       passWord.clear();
+       passWord.sendKeys(contra);
     }
 
     public void ingresarTiendaEnLinea(String txtUser, String txtPass) {
@@ -137,5 +160,6 @@ public class TiendaEnLineaPage {
             );
         System.out.println("Punto de control 5: Se ha salido de la tienda en linea");
     }
+
 
 }
