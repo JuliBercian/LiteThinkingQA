@@ -5,10 +5,11 @@ import java.time.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import pages.GoogleHomePage;
+import pages.GoogleHomePageFactory;
 
 public class GoogleSearch {
 
@@ -24,16 +25,30 @@ public class GoogleSearch {
 
     @Test
     public void SeleniumWebDriverSearch() {
-        WebElement inputSearch = webDriver.findElement(By.id("APjFqb"));
-        inputSearch.clear();
-        inputSearch.sendKeys("Selenium Web Driver");
-
-        WebElement btnSearch = webDriver.findElement(By.name("btnK"));
-        
-        assertEquals("El titulo es el correcto", "Selenium Web Driver - Buscar con Google", webDriver.getTitle());
+        GoogleHomePage googleHomePage = new GoogleHomePage(webDriver);
+        googleHomePage.searchGoogle("Selenium Web Driver");
+        googleHomePage.isUserInSearchResult("Selenium Web Driver - Buscar con Google");
     }
 
-    private void assertEquals(String string, String string2, String title) {
+    @Test
+    public void FormulaOneSearch() {
+        GoogleHomePage googleHomePage = new GoogleHomePage(webDriver);
+        googleHomePage.searchGoogle("FormulaOne");
+        googleHomePage.isUserInSearchResult("FormulaOne - Buscar con Google");
+    }
+
+    @Test
+    public void SeleniumWebDriverSearchPageFactory() {
+        GoogleHomePageFactory googleHomePageFactory = new GoogleHomePageFactory(webDriver);
+        googleHomePageFactory.searchGoogle("Selenium Web Driver");
+        googleHomePageFactory.isUserInSearchResult("Selenium Web Driver - Buscar con Google");
+    }
+
+    @Test
+    public void FormulaOneSearchPageFactory() {
+        GoogleHomePageFactory googleHomePageFactory = new GoogleHomePageFactory(webDriver);
+        googleHomePageFactory.searchGoogle("FormulaOne");
+        googleHomePageFactory.isUserInSearchResult("FormulaOne - Buscar con Google");
     }
 
     @After
