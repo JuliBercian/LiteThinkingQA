@@ -1,4 +1,4 @@
-package features;
+package pagesobjects.features;
 
 import java.time.Duration;
 
@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import pages.GoogleHomePage;
-import pages.GoogleHomePageFactory;
+import pagesobjects.pages.GoogleHomePage;
+import pagesobjects.pages.GoogleHomePageFactory;
 
 public class GoogleSearch {
 
