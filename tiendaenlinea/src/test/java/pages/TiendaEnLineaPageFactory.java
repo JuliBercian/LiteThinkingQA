@@ -2,7 +2,6 @@ package pages;
 
 import static org.junit.Assert.assertEquals;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,7 +50,7 @@ public class TiendaEnLineaPageFactory {
     WebElement btnBackHome;
     @FindBy(id = "react-burger-menu-btn")
     WebElement btnMenuP;
-    @FindBy(id = "logout_sidebar_linke")
+    @FindBy(id = "logout_sidebar_link")
     WebElement optLogOut;
 
     //ABRIR TIENDA EN EL NAVEGADOR
@@ -117,6 +116,7 @@ public class TiendaEnLineaPageFactory {
 
     //PUNTOS DE CONTROL
     public void puntoControlOne(String ingresarTienda) {
+        System.out.println("*******************PAGE FACTORY***************************");
         assertEquals(
             "Punto de control 1: No se ha ingresado a la tienda en linea",
             ingresarTienda,

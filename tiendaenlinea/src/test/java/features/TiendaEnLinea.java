@@ -41,23 +41,23 @@ public class TiendaEnLinea {
 
     @Test
     public void CompraSauceDemoPageFactory() {
-        TiendaEnLineaPage tiendaEnLineaPage = new TiendaEnLineaPage(webDriver);
-        tiendaEnLineaPage.ingresarTiendaEnLinea("standard_user", "secret_sauce");
-        tiendaEnLineaPage.puntoControlOne("https://www.saucedemo.com/inventory.html");
-        tiendaEnLineaPage.seleccionarProductos();
-        tiendaEnLineaPage.checkOut();
-        tiendaEnLineaPage.puntoControlTwo("https://www.saucedemo.com/checkout-step-one.html");
-        tiendaEnLineaPage.enviarDatosAdicional("JULISSA", "BERCIAN", "EL SALVADOR");
-        tiendaEnLineaPage.puntoControlThree("https://www.saucedemo.com/checkout-step-two.html");
-        tiendaEnLineaPage.finCompra();
-        tiendaEnLineaPage.puntoControlFour("https://www.saucedemo.com/checkout-complete.html");
-        tiendaEnLineaPage.salirTiendaEnLinea();
-        tiendaEnLineaPage.puntoControlFive("https://www.saucedemo.com/");
+        TiendaEnLineaPageFactory tiendaEnLineaPageFactory = new TiendaEnLineaPageFactory(webDriver);
+        tiendaEnLineaPageFactory.ingresarTiendaEnLinea("standard_user", "secret_sauce");
+        tiendaEnLineaPageFactory.puntoControlOne("https://www.saucedemo.com/inventory.html");
+        tiendaEnLineaPageFactory.seleccionarProductos();
+        tiendaEnLineaPageFactory.checkOut();
+        tiendaEnLineaPageFactory.puntoControlTwo("https://www.saucedemo.com/checkout-step-one.html");
+        tiendaEnLineaPageFactory.enviarDatosAdicional("JULISSA", "BERCIAN", "EL SALVADOR");
+        tiendaEnLineaPageFactory.puntoControlThree("https://www.saucedemo.com/checkout-step-two.html");
+        tiendaEnLineaPageFactory.finCompra();
+        tiendaEnLineaPageFactory.puntoControlFour("https://www.saucedemo.com/checkout-complete.html");
+        tiendaEnLineaPageFactory.salirTiendaEnLinea();
+        tiendaEnLineaPageFactory.puntoControlFive("https://www.saucedemo.com/");
     }
 
     @After
     public void tearDown() {
-    //    webDriver.quit();
+       webDriver.quit();
     }
 
 }

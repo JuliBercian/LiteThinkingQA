@@ -94,6 +94,7 @@ public class TiendaEnLineaPage {
 
     //PUNTOS DE CONTROL
     public void puntoControlOne(String ingresarTienda) {
+        System.out.println("*******************POM***************************");
         assertEquals(
             "Punto de control 1: No se ha ingresado a la tienda en linea",
             ingresarTienda,
