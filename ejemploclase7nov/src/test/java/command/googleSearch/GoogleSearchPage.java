@@ -9,5 +9,4 @@ public class GoogleSearchPage {
     public static By txtBoxSearch = By.name("q");
     public static By btnSearch = By.name("btnK");
 
-
 }
