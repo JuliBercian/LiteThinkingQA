@@ -16,7 +16,7 @@ import utils.JsonSchemaValidator;
 public class TranslateService {
 
     private final String ENDPOINT = "https://google-translate1.p.rapidapi.com/language/translate/v2";
-    private final String RAPIDAPIKEY = "5358e328a9msh7f5fdad53869971p164a1cjsn2c33f57930e9";
+    private final String RAPIDAPIKEY = "";
     private final String RAPIDAPIHOST = "google-translate1.p.rapidapi.com";
 
     public HttpRequest requestTranslate(String testToTranslate, String source, String target){
