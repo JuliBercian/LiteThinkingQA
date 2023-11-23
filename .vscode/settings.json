@@ -2,5 +2,6 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "java.debug.settings.onBuildFailureProceed": true,
     "maven.executable.options": "",
-    "mvn.executable.path": ""
+    "mvn.executable.path": "",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

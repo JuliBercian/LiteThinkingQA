@@ -1,0 +1,58 @@
+// JASON RECIBIDO EN POSTMAN
+
+{
+    "data": {
+        "id": 12,
+        "email": "rachel.howell@reqres.in",
+        "first_name": "Rachel",
+        "last_name": "Howell",
+        "avatar": "https://reqres.in/img/faces/12-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+
+//JSON SCHEMA PARA VALIDAR EL BODY RESPONSE DE POSTMAN
+
+{
+	"title": "Consultar datos usuario 12",
+    "description": "json schema del escenario de prueba 2",
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+      "data"
+    ],
+    "properties": {
+      "data": {
+        "type": "object",
+        "required": [
+          "id",
+          "email",
+          "first_name",
+          "last_name",
+          "avatar"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "const": 12
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": ["string","null"]
+          }
+        }
+      }
+    }
+}

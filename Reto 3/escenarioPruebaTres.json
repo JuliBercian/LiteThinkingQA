@@ -1,0 +1,40 @@
+// JASON RECIBIDO EN POSTMAN
+
+{
+  "name": "Julissa Bercian",
+  "job": "Student",
+  "id": "227",
+  "createdAt": "2023-11-23T21:22:32.517Z"
+}
+
+//JSON SCHEMA PARA VALIDAR EL BODY RESPONSE DE POSTMAN
+
+{
+	"title": "Crear un nuevo usuario",
+    "description": "json schema del escenario de prueba 3",
+    "type": "object",
+    "required": [
+      "name",
+      "job",
+      "id",
+      "createdAt"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "enum": ["Julissa Bercian"]
+      },
+      "job": {
+        "type": "string",
+        "enum": ["Student"]
+      },
+      "id": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "additionalProperties": false
+}
