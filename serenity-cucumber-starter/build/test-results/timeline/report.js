@@ -1,0 +1,4 @@
+$(document).ready(function() {
+CucumberHTML.timelineItems.pushArray([{"id":"72876f5a-9740-4ca2-8644-0e992b21464f","feature":"Search in Google","scenario":"Search in Google Selenium WebDriver","start":1699580706895,"group":1,"content":"","tags":"@google,@seleniumwebdriver,@test,","end":1699580774273,"className":"passed"},{"id":"c78a91ed-b84a-46bd-b71c-88d075a7cde6","feature":"Checkout at SauceDemo Store","scenario":"Successful Checkout with Multiple Items in SauceDemo Store","start":1699580774394,"group":1,"content":"","tags":"@saucedemo,@checkout,","end":1699580801729,"className":"passed"}]);
+CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[#1,main,5,main]"}]);
+});
